@@ -112,9 +112,3 @@ Backend: https://your-api.onrender.com
 Telegram: @yourusername
 Email: your@email.com
 
-
-
-
-
-
->>>>>>> e01143eab2ed304db8c56f8634ff3b87457668e0
