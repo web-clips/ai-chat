@@ -103,12 +103,9 @@ http://localhost:5000/chat
 {"reply": "Привет! Чем могу помочь?"}
 ```
 
-Frontend: https://your-app.vercel.app
-Backend: https://your-api.onrender.com
-
 
 ### 📞 Контакты
 
-Telegram: @yourusername
-Email: your@email.com
+Telegram: @vasvbi
+Email: azamatmaxout@gmail.com
 
