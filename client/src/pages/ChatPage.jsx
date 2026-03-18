@@ -1,29 +1,33 @@
-import Icon from "../components/ui/Icon";
-import ChatMessage from "../components/ui/ChatMessage";
 import ChatInput from "../components/ui/ChatInput";
-import MicButton from "../components/ui/MicButton";
+import { useChat } from "../hooks/useChat";
+import Icon from "../components/ui/Icon";
+import MessageList from "../components/ui/MessageList";
+import { useEffect, useRef } from "react";
 function ChatPage() {
+  const { messages, ask } = useChat();
+  const bottomRef = useRef(null);
+
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
+  
   return (
-    <div className="min-h-screen flex flex-col items-left justify-center bg-blue-900 text-white px-40 pt-40 pb-20">
+    <div className="min-h-screen flex flex-col items-left justify-center bg-blue-900 text-white px-40 pt-20 pb-20">
       <div className="w-12 h-12 bg-icon flex items-center justify-center rounded-xl mb-10 p-2">
         <Icon name="chat" />
       </div>
       <h1 className="text-3xl font-semibold mb-6">Hi there!</h1>
-      <p className="text-4xl font-bold mb-6">What would you like to know?</p>
-      <p className="text-2xl font-light text-textSecondary w-[470px]">
+      <p className="text-4xl font-bold mb-2">What would you like to know?</p>
+      <p className="text-m font-light text-textSecondary w-[470px]">
         Use one of the most common prompts below or ask your own question
       </p>
-      <ChatMessage />
-      <div className="w-[600px] flex items-center bg-blue-900/80 rounded-2xl p-2 border border-blue-700 pl-5 mt-auto">
-        <MicButton />
-        <ChatInput />
-        <button
-          type="submit"
-          className="w-[60px] h-full p-4 items-center content-center bg-btn rounded-xl"
-        >
-          <Icon name="send" />
-        </button>
+      <div className="h-[400px] flex-1 overflow-auto">
+        <MessageList bottomRef={bottomRef} messages={messages} />
       </div>
+      <div className="w-[600px] h-[65px] flex items-center bg-bgInput rounded-[50px] border-1 border-primary p-2 mt-auto border">
+        <ChatInput ask={ask} />
+      </div>
+
     </div>
   );
 }
