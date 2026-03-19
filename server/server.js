@@ -8,13 +8,17 @@ const PORT = process.env.PORT || 5000;
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin: "https://ai-chat-beta-six.vercel.app", // URL твоего фронтенда
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+}));
 app.use(express.json());
 
 app.use("/api/chat", chatRoutes);
 
 
 
-app.listen(PORT, ()=>{
+app.listen(PORT, () => {
     console.log(`Server running on ${PORT}`)
 })
