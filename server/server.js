@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 5000;
 const app = express();
 
 app.use(cors({
-    origin: "https://ai-chat-beta-six.vercel.app", // URL твоего фронтенда
+    origin: "*", // URL твоего фронтенда
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 }));
