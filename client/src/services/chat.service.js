@@ -11,7 +11,7 @@ export const sendMessage = async (message) => {
     const response = await API.post("/chat", { message });
     return response.data;
   } catch (error) {
-    console.error("Ошибка отправки сообщения:", error);
+    console.error("Ошибка отправки сообщения:", error.response?.data || error.message);
     throw error;
   }
 };
