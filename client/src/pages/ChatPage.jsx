@@ -24,7 +24,7 @@ function ChatPage() {
       <div className="h-[400px] flex-1 overflow-auto">
         <MessageList bottomRef={bottomRef} messages={messages} />
       </div>
-      <div className="w-[600px] h-[65px] flex items-center bg-bgInput rounded-[50px] border-1 border-primary p-2 mt-auto border">
+      <div>
         <ChatInput ask={ask} />
       </div>
 
