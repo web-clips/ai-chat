@@ -6,4 +6,7 @@ const router = express.Router();
 
 router.post("/", chat);
 
+router.get("/", (req, res) => {
+    res.send("API работает");
+});
 export default router;
