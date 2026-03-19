@@ -9,7 +9,7 @@ export default function ChatMessage({msg}){
     <motion.div
       initial={{opacity:0, y:10}}
       animate={{opacity:1, y:0}}
-      className={`max-w-[70%] p-3 rounded-xl
+      className={`max-w-[70%] p-3 rounded-xl text-xs
       ${isUser ? "bg-blue-600 self-end" : "bg-gray-700 self-start"}
       `}
     >
